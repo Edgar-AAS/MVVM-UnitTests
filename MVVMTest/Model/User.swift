@@ -1,10 +1,3 @@
-//
-//  User.swift
-//  MVVMTest
-//
-//  Created by Leonardo Almeida on 07/11/22.
-//
-
 import Foundation
 
 struct UsersData: Decodable, Equatable {

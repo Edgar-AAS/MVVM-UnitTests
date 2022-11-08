@@ -1,10 +1,3 @@
-//
-//  CustomTableViewCellScreen.swift
-//  MVVM-BackFront2
-//
-//  Created by Edgar Arlindo on 09/09/22.
-//
-
 import UIKit
 
 class CustomTableViewCellScreen: UIView {

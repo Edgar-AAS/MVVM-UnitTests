@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  MVVMTest
-//
-//  Created by Leonardo Almeida on 07/11/22.
-//
-
 import UIKit
 
 @main

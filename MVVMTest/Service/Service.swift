@@ -1,15 +1,8 @@
-//
-//  Service.swift
-//  MVVMTest
-//
-//  Created by Leonardo Almeida on 07/11/22.
-//
-
 import Foundation
 
 enum Error: Swift.Error {
     case invalidData
-    case invalidResponse    
+    case invalidResponse
     case badURL
     case decodeError
 }

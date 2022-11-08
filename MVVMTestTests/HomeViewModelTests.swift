@@ -1,10 +1,3 @@
-//
-//  MVVMTestTests.swift
-//  MVVMTestTests
-//
-//  Created by Leonardo Almeida on 07/11/22.
-//
-
 import XCTest
 @testable import MVVMTest
 
@@ -31,7 +24,6 @@ class HomeViewModelTests: XCTestCase {
     }
     
     func test_fetchUsersDataRequest_whenUserDataIsNotNil_shouldCall_delegateSuccessRequest() {
-        //para previnir que alguem modifique o objeto que esta sendo testado, e quebre os testes utilize as fixtures
         let user = User.fixture(name: "Edgar")
         serviceSpy.userDataToBeReturned = UsersData(group: [user])
         sut.delegate = delegateSpy

@@ -1,12 +1,4 @@
-//
-//  HomeViewModel.swift
-//  MVVMTest
-//
-//  Created by Leonardo Almeida on 07/11/22.
-//
-
 import Foundation
-
 
 protocol HomeViewModelDelegate: AnyObject {
     func successRequest()
@@ -23,7 +15,6 @@ class HomeViewModel {
     
     weak var delegate: HomeViewModelDelegate?
     
-    //para poder testar se o fetchUsersDataRequest
     func fetchUsersDataRequest() {
         service?.fetchDataFromAPI(completion: { (data, error) in
             if let usersData = data {
@@ -48,7 +39,6 @@ class HomeViewModel {
     }
     
     func updateHeartState(user: User) {
-        //substituindo user pelo identifier
         if let row = listUser.firstIndex(where: { user.identifier == $0.identifier }) {
             listUser[row] = user
         }

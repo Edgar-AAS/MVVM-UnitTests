@@ -1,10 +1,3 @@
-//
-//  HomeViewController.swift
-//  MVVM-BackFront2
-//
-//  Created by Edgar Arlindo on 08/09/22.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController {

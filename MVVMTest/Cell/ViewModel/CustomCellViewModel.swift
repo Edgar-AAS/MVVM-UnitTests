@@ -1,10 +1,3 @@
-//
-//  CustomCellViewModel.swift
-//  MVVMBackFront
-//
-//  Created by Edgar Arlindo on 01/09/22.
-//
-
 import Foundation
 
 class CustomCellViewModel {
@@ -15,7 +8,6 @@ class CustomCellViewModel {
         case age = "Idade: "
     }
     
-    //number format <-
     private var user: User
     
     init(data: User) {

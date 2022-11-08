@@ -1,10 +1,3 @@
-//
-//  CustomCellViewModelTests.swift
-//  MVVMTestTests
-//
-//  Created by Leonardo Almeida on 08/11/22.
-//
-
 import XCTest
 @testable import MVVMTest
 

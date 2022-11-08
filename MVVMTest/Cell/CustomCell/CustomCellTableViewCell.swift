@@ -1,10 +1,3 @@
-//
-//  CustomCellTableViewCell.swift
-//  MVVMTest
-//
-//  Created by Leonardo Almeida on 07/11/22.
-//
-
 import UIKit
 
 protocol CustomCellTableViewCellDelegate: AnyObject {
@@ -22,7 +15,6 @@ final class CustomCellTableViewCell: UITableViewCell {
 
     private var screen = CustomTableViewCellScreen()
 
-    //inicializa celulas
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "PersonCell")
         selectionStyle = .none
@@ -47,7 +39,6 @@ final class CustomCellTableViewCell: UITableViewCell {
             viewModel.exchangeEnableHeart(value: true)
         }
 
-        //retorna o usuario no qual o enableHeart foi modificado
         delegate?.didButtonHeartTapped(user: viewModel.getUser)
     }
 
