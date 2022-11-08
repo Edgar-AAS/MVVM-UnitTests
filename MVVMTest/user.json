@@ -1,0 +1,40 @@
+{
+    "group": [
+        {
+            "name": "Caio",
+            "age": 25,
+            "profession": "Developer IOS",
+            "salary": "1.0000,00",
+            "imageUser": "person.circle",
+            "isEnableHeart": true,
+            "identifier": 0
+        },
+        {
+            "name": "Josh",
+            "age": 23,
+            "profession": "Developer Android",
+            "salary": "12.0000,00",
+            "imageUser": "person.circle",
+            "isEnableHeart": true,
+            "identifier": 1
+        },
+        {
+            "name": "Douglas",
+            "age": 46,
+            "profession": "CEO",
+            "salary": "10.0000,00",
+            "imageUser": "person.circle",
+            "isEnableHeart": true,
+            "identifier": 2
+        },
+        {
+            "name": "Leandro",
+            "age": 35,
+            "profession": "Manager",
+            "salary": "12.0000,00",
+            "imageUser": "person.circle",
+            "isEnableHeart": true,
+            "identifier": 3
+        }
+    ]
+}
