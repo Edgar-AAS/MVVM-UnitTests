@@ -13,7 +13,7 @@ final class CustomCellTableViewCell: UITableViewCell {
         self.delegate = delegate
     }
 
-    private var screen = CustomTableViewCellScreen()
+    private(set) var screen = CustomTableViewCellScreen()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "PersonCell")

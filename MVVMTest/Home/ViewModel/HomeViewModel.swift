@@ -1,14 +1,24 @@
 import Foundation
 
+protocol HomeViewModelProtocol {
+    var delegate: HomeViewModelDelegate? { get set }
+    func fetchUsersDataRequest()
+    var numbersOfRows: Int { get }
+    func loadCurrentUser(indexPath: IndexPath) -> User
+    func getName(indexPath: IndexPath) -> String
+    func updateHeartState(user: User)
+    func getNumbersOfSections() -> Int
+}
+
 protocol HomeViewModelDelegate: AnyObject {
     func successRequest()
     func errorRequest()
 }
 
-class HomeViewModel {
+class HomeViewModel: HomeViewModelProtocol {
     private let service: NetworkService?
     private var listUser: [User] = []
-        
+    
     init(service: NetworkService?) {
         self.service = service
     }
@@ -42,5 +52,9 @@ class HomeViewModel {
         if let row = listUser.firstIndex(where: { user.identifier == $0.identifier }) {
             listUser[row] = user
         }
+    }
+    
+    func getNumbersOfSections() -> Int {
+        return 1
     }
 }

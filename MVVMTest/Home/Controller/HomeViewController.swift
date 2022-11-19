@@ -1,10 +1,10 @@
 import UIKit
 
-class HomeViewController: UIViewController {
-    private var screen: HomeScreenView?
-    private let viewModel: HomeViewModel
+class HomeViewController: UIViewController, UITableViewDelegate {
+    private var viewModel: HomeViewModelProtocol
+    var screen: HomeScreenView?
     
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.viewModel.delegate = self
@@ -38,25 +38,21 @@ extension HomeViewController: HomeViewModelDelegate {
         print("Error de request")
     }
 }
-
 //MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.getNumbersOfSections()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numbersOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as? CustomCellTableViewCell else { fatalError()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as? CustomCellTableViewCell else { return UITableViewCell() }
         cell.setupCell(with: viewModel.loadCurrentUser(indexPath: indexPath))
         cell.delegate(delegate: self)
         return cell
-    }
-}
-
-//MARK: - UITableViewDelegate
-extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(viewModel.getName(indexPath: indexPath))
     }
 }
 

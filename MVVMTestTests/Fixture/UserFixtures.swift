@@ -3,11 +3,11 @@ import Foundation
 
 extension User {
     static func fixture(
-        name: String =  "Ronaldinho",
-        age: Int = 1,
-        profession: String = "iOS developer",
-        salary: String = "1200",
-        imageUser: String = "heart_fill",
+        name: String =  "Edgar Arlindo",
+        age: Int = 23,
+        profession: String = "iOS Developer",
+        salary: String = "3500,00",
+        imageUser: String = "person.circle",
         isEnableHeart: Bool = true,
         identifier: Int =  1)
     -> Self {

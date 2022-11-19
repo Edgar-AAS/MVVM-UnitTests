@@ -16,14 +16,14 @@ class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(serviceSpy.fetchDataFromAPICallCount, 1)
     }
     
-    func test_fetchUsersDataRequest_whenUserDataIsNil_shouldCall_delegateErrorRequest() {
+    func test_fetchUsersDataRequest_when_userDataIsNil_shouldCall_delegateErrorRequest() {
         serviceSpy.userDataToBeReturned = nil
         sut.delegate = delegateSpy
         sut.fetchUsersDataRequest()
         XCTAssertTrue(delegateSpy.errorRequestIsCalled)
     }
     
-    func test_fetchUsersDataRequest_whenUserDataIsNotNil_shouldCall_delegateSuccessRequest() {
+    func test_fetchUsersDataRequest_when_userDataIsNotNil_shouldCall_delegateSuccessRequest() {
         let user = User.fixture(name: "Edgar")
         serviceSpy.userDataToBeReturned = UsersData(group: [user])
         sut.delegate = delegateSpy
@@ -65,5 +65,9 @@ class HomeViewModelTests: XCTestCase {
         sut.updateHeartState(user: userFalse)
         let indexPath = IndexPath(row: 0, section: 0)
         XCTAssertEqual(sut.loadCurrentUser(indexPath: indexPath), userFalse)
+    }
+    
+    func test_getNumbersOfSection() {
+        XCTAssertEqual(sut.getNumbersOfSections(), 1)
     }
 }
